@@ -10,6 +10,33 @@ When testing the libraries on a Next.js app with pages router and `esmExternals:
 ⨯ TypeError: _mui_utils_deepmerge__WEBPACK_IMPORTED_MODULE_3__ is not a function
 ```
 
+<details>
+<summary>Full error</summary>
+  
+```
+ ⨯ TypeError: _mui_utils_deepmerge__WEBPACK_IMPORTED_MODULE_3__ is not a function
+    at createPalette (webpack-internal:///./node_modules/@mui/material/styles/createPalette.mjs:266:27)
+    at createTheme (webpack-internal:///./node_modules/@mui/material/styles/createTheme.mjs:47:83)
+    at eval (webpack-internal:///./node_modules/@mui/material/styles/defaultTheme.mjs:7:82)
+    at ./node_modules/@mui/material/styles/defaultTheme.mjs (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/vendor-chunks/@mui.js:260:1)
+    at __webpack_require__ (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/webpack-runtime.js:33:42)
+    at eval (webpack-internal:///./node_modules/@mui/material/styles/styled.mjs:8:75)
+    at ./node_modules/@mui/material/styles/styled.mjs (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/vendor-chunks/@mui.js:310:1)
+    at __webpack_require__ (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/webpack-runtime.js:33:42)
+    at eval (webpack-internal:///./node_modules/@mui/material/Button/Button.mjs:13:77)
+    at ./node_modules/@mui/material/Button/Button.mjs (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/vendor-chunks/@mui.js:20:1)
+    at __webpack_require__ (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/webpack-runtime.js:33:42)
+    at eval (webpack-internal:///./node_modules/@mui/material/Button/index.mjs:6:69)
+    at ./node_modules/@mui/material/Button/index.mjs (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/vendor-chunks/@mui.js:40:1)
+    at __webpack_require__ (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/webpack-runtime.js:33:42)
+    at __barrel_optimize__?names=Button!=!./node_modules/@mui/material/index.mjs (/Users/diegoandai/MUI/experiments/esm-test-13-nextjs-pages-mui-exports-ts/.next/server/pages/index.js:26:75) {
+  page: '/'
+}
+ GET / 500 in 128ms
+```
+
+</details>
+
 This seems related to default import/export interop between esm and cjs: https://www.typescriptlang.org/docs/handbook/modules/appendices/esm-cjs-interop.html
 
 ## Steps to reproduce
