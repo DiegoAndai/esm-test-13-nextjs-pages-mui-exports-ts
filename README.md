@@ -4,6 +4,7 @@
 
 This is a repro for an issue with the pages router in Next.js when using `esmExternals: false`.
 We're trying to add the `exports` field to the `package.json` of MUI core libraries ([PR](https://github.com/mui/material-ui/pull/41596) | [Docs](https://deploy-preview-41596--material-ui.netlify.app/material-ui/migration/migration-v5/#added-exports-field-to-package-json)).
+This app is using the MUI libraries from the [PR](https://github.com/mui/material-ui/pull/41596) build (e.g., https://pkg.csb.dev/mui/material-ui/commit/fb7a4ff2/@mui/material).
 When testing the libraries on a Next.js app with pages router and `esmExternals: false`, we get the following error:
 
 ```
